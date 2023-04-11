@@ -15,6 +15,16 @@
       <a href="/">About</a>
       <button>Contact</button>
     </nav>
+    <div class="hamburger">
+      <span>X</span>
+    </div>
+    <div class="hamburger-menu">
+      <ul>
+        <li><a href="/">Services</a></li>
+        <li><a href="/">Projects</a></li>
+        <li><a href="/">About</a></li>
+      </ul>
+    </div>
   </header>
 
   <!--Body after the header-->

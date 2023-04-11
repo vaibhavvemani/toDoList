@@ -41,6 +41,31 @@
 </main>
 
 <style>
+
+    .task-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20rem;
+    }
+
+    .tasks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 20rem;
+        box-shadow: 0px 0px 30px 10px #191919;
+        overflow-y: auto;
+    }
+
+    .tasks ul {
+        list-style: none;
+    }
+
+    label {
+        margin: 1rem;
+    }
     .input-container{
         display: flex;
         justify-content: center;
@@ -52,6 +77,7 @@
         width: 10rem;
         padding: 0 5px;
         border: #191919 solid 1px;
+        background-color: #202020;
         transition: width 0.4s ease;
         text-align: center;
     }
