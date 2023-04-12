@@ -2,6 +2,8 @@
     let tsk;
     let id = 1;
     let todos = []
+    let changeOpac;
+    $: opacity = changeOpac ? '0.6' : '1';
     function addTask() {
         todos.push({id: id++, name: tsk, completed: false})
         todos = todos;
@@ -11,6 +13,7 @@
         todos.pop();
         todos = todos;
     }
+    
 </script>
 
 <main>
@@ -19,19 +22,21 @@
         <div class="tasks">
           <ul>
             {#each todos as todo, index (todo.id)}
-            <li>
-              <label for="task">{index+1} {todo.name}
-                <input type='checkbox' checked={todo.completed} id='task'>
-              </label>
+            <li class:done={todo.completed}>
+                <div class="animation">
+                    <label for="task" >{index+1} {todo.name}
+                        <input  type='checkbox' bind:checked={todo.completed} id='task'  >
+                    </label>
+                </div>
             </li>
             {/each}
           </ul>
         </div>
-        
+        <img src="src\assets\doggy.jpg" alt="doggyIcon">
       </div>
 
     <div class="input-container">
-        <input type="text" bind:value={tsk} class="task-name" placeholder="type your task" >
+        <input id="taskInput" type="text" bind:value={tsk} class="task-name" placeholder="type your task" required>
     </div>
     
     <div class="add-container">
@@ -41,12 +46,37 @@
 </main>
 
 <style>
+    @keyframes fromTheRight {
+        from {
+            transform: translateX(-1000px);
+        }
+        to {
+            transfrom: translateX(0px);
+        }
+    }
 
+    img {
+        height: 30px;
+        mix-blend-mode: multiply;
+    }
+    .done {
+        opacity: 0.6;
+    }
+    .surpriseEl {
+        position: absolute;
+        right: 18rem;
+        animation: fromTheRight 0.4s ease-in;
+    }
+
+    .animation {
+        animation: fromTheRight 0.4s ease-in;
+    }
     .task-container {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 20rem;
+        
     }
 
     .tasks {
