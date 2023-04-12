@@ -31,8 +31,9 @@
             </li>
             {/each}
           </ul>
+
         </div>
-        <img src="src\assets\doggy.jpg" alt="doggyIcon">
+        
       </div>
 
     <div class="input-container">
@@ -55,21 +56,12 @@
         }
     }
 
-    img {
-        height: 30px;
-        mix-blend-mode: multiply;
-    }
     .done {
         opacity: 0.6;
     }
-    .surpriseEl {
-        position: absolute;
-        right: 18rem;
-        animation: fromTheRight 0.4s ease-in;
-    }
 
     .animation {
-        animation: fromTheRight 0.4s ease-in;
+        animation: fromTheRight 0.2s ease-out;
     }
     .task-container {
         display: flex;
@@ -80,6 +72,7 @@
     }
 
     .tasks {
+        position:static;
         display: flex;
         justify-content: center;
         align-items: center;

@@ -19,7 +19,7 @@
       <button>Contact</button>
     </nav>
     <div class="hamburger">
-      <button class="menubutton" on:click={() => { index ? --index : ++index  }}>Menu</button>
+      <button class="menubutton" on:click={() => { index ? --index : ++index;;  }}>Menu</button>
     </div>
     <div class="hamburger-menu" style="display:{menu[index].displayStyle}">
       <ul>
@@ -50,4 +50,5 @@
     border-radius: 10px;
     background-image: linear-gradient(to right,#ff8a00,#c11063);
   }
+
 </style>
